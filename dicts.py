@@ -22,7 +22,7 @@ if health_profile.get("gender") == "female":
 
 
 print(health_profile)
-print(health_profile["husband"]['age'])
+print(health_profile["husband"]["age"])
 
 team = {
     "name": "liverpool",
@@ -32,9 +32,22 @@ team = {
         {"name": "Salah", "nationality": "Egypt", "goals": 5},
         {"name": "Mani", "nationality": "Sengal", "goals": 3},
         {"name": "Fer", "nationality": "Barazil", "goals": 4},
-    ]
+    ],
 }
 
 salah = team["players"][0]["name"]
 
 print(salah)
+
+
+def total_goals():
+    players = team.get("players")
+    goals = 0
+    if players is not None:
+        for p in players:
+            goals += p["goals"]
+    return goals
+
+
+if __name__ == "__main__":
+    print(total_goals())
