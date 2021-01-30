@@ -17,3 +17,15 @@ def get_info(cls):
     whatever class you call, it execute based ob class
     """
     print(f"You are using ({cls.__name__}) with count {cls.counts}")
+
+
+
+=====================================
+
+lambda is anonymous function, quick function
+
+=========================
+
+decorator is function is called before another function.
+
+is function is an input to another function

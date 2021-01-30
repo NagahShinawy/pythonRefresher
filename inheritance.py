@@ -17,16 +17,17 @@ class Student:
 class WorkingStudent(Student):
 
     # re implement __init__ with custom info for working student
-    def __init__(self, name, school, salary):
+    def __init__(self, name, school, salary, job_title):
         super().__init__(name, school)
         self.salary = salary
+        self.jon_title = job_title
 
     @classmethod
-    def friend(cls, origin, friend_name, salary):
-        return cls(friend_name, origin.school, salary)
+    def friend(cls, origin, friend_name, *args,  **kwargs):
+        return cls(friend_name, origin.school, *args,  **kwargs)
 
     def __repr__(self):
-        return f"{self.name}- {self.salary}"
+        return f"{self.name}- {self.salary} - {self.jon_title}"
 
 
 if __name__ == "__main__":
@@ -35,6 +36,11 @@ if __name__ == "__main__":
     print(john)
     print(sara)
     breaks()
-    nagah = WorkingStudent("Nagah", "Fahd", 20)
-    ahmed = WorkingStudent.friend(nagah, "Ahmed", 12)
+    nagah = WorkingStudent("Nagah", "Fahd", 20, "software developer")
+    ahmed = WorkingStudent.friend(nagah, "Ahmed", 40, job_title="system admin")
     print(ahmed)
+    girl = Student.friend(nagah, 'Roba')
+    print(girl.name)
+    print(girl.school)
+    breaks()
+
