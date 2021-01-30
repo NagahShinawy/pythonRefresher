@@ -1,0 +1,19 @@
+static methods: is not matter which  obj you use to call static method. it is shared.
+               : method does the same for all objs
+
+================
+Only use @staticmethod when you want to place a method inside a class that is logically related to the class,
+but does not necessarily interact with any specific instance.
+
+- all objs share the same (method) logic.
+
+===========================
+add subclass to note that, output is different based on class that call the method (parent class or child class)
+
+
+@classmethod
+def get_info(cls):
+    """dynamic implementation of method based on cls
+    whatever class you call, it execute based ob class
+    """
+    print(f"You are using ({cls.__name__}) with count {cls.counts}")
