@@ -23,8 +23,45 @@ def check_smoking(is_smoker=bool):
         return "Check Advices for smoking give up"
 
 
-def breaks(char="#", number=20):
-    print(char * number)
+def breaks(char="#", number=20, newline=False):
+    if newline:
+        print("\n" + char * number)
+    else:
+        print(char * number)
+
+
+def exclude_char_n(value: str):
+    new_value = ""
+    for char in value:
+        if char not in ["n", "N"]:
+            new_value += char
+    return new_value
+
+
+def double_numbers(numbers):
+    """
+    numbers : list of numbers
+    return list of double numbers
+    """
+    return [n * 2 for n in numbers]
+
+
+def people_you_know():
+    names = input("Enter names").split(",")
+    return names
+
+
+def ask_user():
+    person = input("Enter person name")
+    if person in people_you_know():
+        return True
+    return False
+
+
+def is_even(number: int):
+    if number % 2 == 0:
+        return True
+    return False
 
 
 if __name__ == "__main__":
